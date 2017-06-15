@@ -16,6 +16,16 @@
   list-style-type: none;
 }
 
+.answerSRP{
+  margin: 4% 10%;
+  text-align: left;
+}
+
 .questions{
   margin: 5% 0 0 0;
+}
+
+.back{
+  font-size: 24px;
+  color: white;
 }

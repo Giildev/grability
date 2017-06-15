@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {
+  Link
+} from 'react-router-dom'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { solarizedDark } from 'react-syntax-highlighter/dist/styles';
 import logo from '../logo.svg';
@@ -100,6 +103,9 @@ class Refactoring extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
           <h2>Refactoring</h2>
+          <Link to="/" className="back">
+            Back
+          </Link>
         </div>
         <div>
           <h3 className="questions">Las malas prácticas de programación que en su criterio son evidenciadas en el código</h3>
