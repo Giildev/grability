@@ -1,0 +1,21 @@
+.oldCode {
+  margin: 0 10px;
+  float:left;
+  text-align: left;
+  width: 48%;
+}
+
+.newCode {
+  margin: 0 10px;
+  display: inline-block;
+  text-align: left;
+  width: 48%;
+}
+
+.answers{
+  list-style-type: none;
+}
+
+.questions{
+  margin: 5% 0 0 0;
+}
