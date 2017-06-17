@@ -11,6 +11,42 @@
 	top: -40px;
 }
 
+.sub-header{
+	/*background: pink;*/
+}
+
+.sub-header__character-logo{
+	margin: 25px 0px 25px 30px;
+}
+
+.sub-header__character{
+	font-size: 32px;
+	font-weight: bold;
+	color: black;
+	position: relative;
+	left: 0;
+	bottom: 30px;
+}
+
+.footer{
+	background: #59554b;
+	height: 100px;
+}
+
+.footer__text{
+	font-size: 16px;
+	color: white;
+	position: relative;
+	top: 8%;
+	left: 120px;
+}
+
+.footer__logo{
+	position: relative;
+	top: 25%;
+	left: 60%;
+}
+
 .search{
 	position: absolute;
   left: 50%;
