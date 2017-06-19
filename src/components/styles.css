@@ -12,7 +12,8 @@
 }
 
 .sub-header{
-	/*background: pink;*/
+	width: 100%;
+  display: inline-block;
 }
 
 .sub-header__character-logo{
@@ -26,6 +27,73 @@
 	position: relative;
 	left: 0;
 	bottom: 30px;
+}
+
+.box{
+	width: 35%;
+	background-color: white;
+	margin: 30px 60px;
+	border-radius: 5px;
+	position: relative;
+	display: inline-block;
+}
+
+.box__circle{
+	position: relative;
+	overflow: hidden;
+	top: -40px;
+	left: -40px;
+	width: 200px;
+	height: 200px;
+	background-color: pink;
+	border-radius: 50%;
+}
+
+@media (max-width: 1200px) {
+  .box__circle {
+		position: relative;
+		overflow: hidden;
+		top: -40px;
+		left: -40px;
+		width: 150px;
+		height: 150px;
+		background-color: pink;
+		border-radius: 50%;
+  }
+}
+
+.box__img{
+	position: absolute;
+	min-width: 150px;
+	max-width: 360px;
+  left: -100px;
+}
+
+.box__title{
+	position: absolute;
+	top: -3.5%;
+	right: 15%;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.box__description{
+	margin: -40% 4% 0 50%;
+	font-size: 12px;
+	color: #6b6b6b;
+}
+
+.box__related{
+	margin: 40px 0 0 40px;
+	font-size: 20px;
+	color: #6b6b6b;
+}
+
+.box__related-comic-container{
+	width: 40%;
+	margin: 5% 0% 5% 8%;
+	display: inline-block;
 }
 
 .footer{

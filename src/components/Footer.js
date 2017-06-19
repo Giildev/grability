@@ -1,7 +1,5 @@
 import React from 'react';
-import SearchBar from './SearchBar'
 import './styles.css'
-import MarvelLogo from '../img/marvel-logo.png'
 import GrabilityLogo from '../img/grability-logo.png'
 
 class Footer extends React.Component {

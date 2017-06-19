@@ -5,6 +5,18 @@
   width: 48%;
 }
 
+.container-list{
+	width: 70%;
+  display: inline-block;
+  background-color: rgba(222, 222, 222, 0.65);
+}
+
+.container-favorite{
+  position: absolute;
+  display: inline-block;
+  width: 30%;
+}
+
 .newCode {
   margin: 0 10px;
   display: inline-block;
@@ -28,8 +40,4 @@
 .back{
   font-size: 24px;
   color: white;
-}
-
-.test{
-  margin: 50px 50px;
 }
