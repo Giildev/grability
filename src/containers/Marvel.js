@@ -5,6 +5,7 @@ import CryptoJS from 'crypto-js';
 import Header from '../components/Header'
 import SubHeader from '../components/SubHeader'
 import Box from '../components/Box'
+import Favorite from '../components/Favorite'
 import Footer from '../components/Footer'
 import '../App.css';
 
@@ -76,7 +77,7 @@ class Marvel extends Component {
           </div>
         </div>
         <div className="container-favorite">
-          
+          <Favorite />
         </div>
         <Footer />
       </div>
