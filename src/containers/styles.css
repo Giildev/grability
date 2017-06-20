@@ -11,10 +11,8 @@
   background-color: rgba(222, 222, 222, 0.65);
 }
 
-.container-favorite{
-  position: absolute;
-  display: inline-block;
-  width: 20%;
+.favorite{
+  /*background-color: red;*/
 }
 
 .newCode {
@@ -40,6 +38,10 @@
 .back{
   font-size: 24px;
   color: white;
+}
+
+.backgroundColor{
+	background-color: rgba(242, 235, 235, 0.81);
 }
 
 /*.box__related-comic-container {

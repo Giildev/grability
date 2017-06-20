@@ -15,9 +15,9 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div className="search">
-                <input className="search__input" placeholder="Search Character..."/>
-                <img className="search__icon" src={SearchLogo} alt=""/>
+            <div>
+              <input className="search__input" placeholder="Search Character..."/>
+              <img className="search__icon" src={SearchLogo} alt=""/>
             </div>
         );
     }

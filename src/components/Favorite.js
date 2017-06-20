@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col, Image } from 'react-bootstrap';
 import './styles.css'
 import Shield from '../icons/favourites.png'
 import FavoriteComic from './FavoriteComic'
@@ -7,12 +8,22 @@ class Favorite extends React.Component {
 
   render() {
     return (
-      <div className="fav">
-        <div className="fav__header">
-          <img className="fav__Shield" src={Shield} alt=""/>
-          <div className="fav__Text">My Favourites</div>
-          <FavoriteComic comicImg={this.props.comicImg} comicDescription={this.props.comicDescription}/>
-        </div>
+      <div>
+        <Row className="fav">
+          <Col xs={2} md={2}>
+            <Image className="fav__shield" src={Shield} alt=""/>
+          </Col>
+          <Col xs={10} md={10}>
+            <div className="fav__Text">My Favourites</div>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={1} md={1}/>
+          <Col xs={10} md={10}>
+            <FavoriteComic />
+          </Col>
+          <Col xs={1} md={1}/>
+        </Row>
       </div>
     );
   }
