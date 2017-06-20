@@ -6,7 +6,7 @@
 }
 
 .container-list{
-	width: 70%;
+	width: 80%;
   display: inline-block;
   background-color: rgba(222, 222, 222, 0.65);
 }
@@ -14,7 +14,7 @@
 .container-favorite{
   position: absolute;
   display: inline-block;
-  width: 30%;
+  width: 20%;
 }
 
 .newCode {
@@ -41,3 +41,9 @@
   font-size: 24px;
   color: white;
 }
+
+/*.box__related-comic-container {
+	width: 40%;
+	margin: 5% 0% 5% 8%;
+	display: inline-block;
+}*/

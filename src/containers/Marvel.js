@@ -13,7 +13,9 @@ class Marvel extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			heroe: []
+			heroe: [],
+      comicImg: '',
+      comicDescription: 'lorem'
 		}
 	}
 
@@ -31,7 +33,9 @@ class Marvel extends Component {
 				heroe.push({
 					id: data.id,
 					name: data.name,
-					img: data.thumbnail.path + "/standard_fantastic." + data.thumbnail.extension
+					img: data.thumbnail.path + "/standard_fantastic." + data.thumbnail.extension,
+          description: data.description,
+          comics: data.comics
 				});
 				return true;
 			})
@@ -42,10 +46,22 @@ class Marvel extends Component {
 	}
 
 	renderHeroeList = () => {
-		return this.state.heroe.map((data) => {
-			return (
-				<li>{data.name}</li>
-			)
+    let Comics = ""
+    let Description = ""
+		return this.state.heroe.map((data, index) => {
+      (data.description) ? Description = data.description : Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic id culpa est illo, voluptatum quo deserunt cum nulla iure temporibus repellat impedit velit consequuntur harum necessitatibus, odio, adipisci veritatis mollitia.";
+      (data.comics.available) ? Comics = data.comics.items.map((data) => { return data.name }) : Comics = false
+      for (var i = index; i < 10; i++) {
+        return (
+  				<Box
+            key={index}
+            heroeDescription={Description}
+            heroeImg={data.img}
+            heroeName={data.name}
+            heroeComics={ Comics }
+          />
+  			)
+      }
 		})
 	}
 
@@ -55,15 +71,12 @@ class Marvel extends Component {
 				<Header/>
 				<div className="container-list">
 					<SubHeader/>
-					<ul>
-						{this.renderHeroeList()}
-					</ul>
 					<div>
-						<Box/>
+						{this.renderHeroeList()}
 					</div>
 				</div>
 				<div className="container-favorite">
-					<Favorite/>
+					<Favorite comicImg={this.state.comicImg} comicDescription={this.state.comicDescription}/>
 				</div>
 				<Footer/>
 			</div>

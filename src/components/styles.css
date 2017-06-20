@@ -31,7 +31,6 @@
 	position: relative;
 	width: 70%;
 	height: 400px;
-	background-color: pink;
 	margin: 10% 15% 40% 15%;
 }
 
@@ -71,12 +70,9 @@
 }
 
 .box {
-	width: 35%;
 	background-color: white;
-	margin: 30px 60px;
 	border-radius: 5px;
-	position: relative;
-	display: inline-block;
+	margin: 2.5% 2.5%;
 }
 
 .box__circle {
@@ -84,50 +80,51 @@
 	overflow: hidden;
 	top: -40px;
 	left: -40px;
-	width: 200px;
-	height: 200px;
-	background-color: pink;
+	width: 150px;
+	height: 150px;
 	border-radius: 50%;
 }
 
-@media (max-width: 1200px) {
-	.box__circle {
-		position: relative;
-		overflow: hidden;
-		top: -40px;
-		left: -40px;
-		width: 150px;
-		height: 150px;
-		background-color: pink;
-		border-radius: 50%;
-	}
-}
-
 .box__img {
-	position: absolute;
-	min-width: 150px;
-	max-width: 360px;
-	left: -100px;
+	width: 80%;
+	margin: -15px -40px;
+	box-shadow: 3px 6px 20px;
 }
 
 .box__title {
-	position: absolute;
-	top: -3.5%;
-	right: 15%;
-	font-size: 20px;
+	position: relative;
+	top: -24px;
+	font-size: 24px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 
+.box__viewMore{
+	margin: 0px 20px;
+	padding: 5px 15px;
+	border-radius: 0;
+	background-color: rgb(226, 0, 0);
+	border: none;
+}
+
+.box__viewMore:hover{
+	background-color: rgb(126, 0, 0);
+}
+
+.box__comic-list{
+	list-style: none
+}
+
 .box__description {
-	margin: -40% 4% 0 50%;
+	position: relative;
 	font-size: 12px;
-	color: #6b6b6b;
+	margin: 0 20px 20px 0px;
 }
 
 .box__related {
-	margin: 40px 0 0 40px;
+	margin: 18px 0px 18px 0px;
 	font-size: 20px;
+	font-weight: bold;
 	color: #6b6b6b;
 }
 

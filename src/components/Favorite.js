@@ -11,11 +11,7 @@ class Favorite extends React.Component {
         <div className="fav__header">
           <img className="fav__Shield" src={Shield} alt=""/>
           <div className="fav__Text">My Favourites</div>
-          <FavoriteComic />
-          <FavoriteComic />
-          <FavoriteComic />
-          <FavoriteComic />
-          <FavoriteComic />
+          <FavoriteComic comicImg={this.props.comicImg} comicDescription={this.props.comicDescription}/>
         </div>
       </div>
     );
