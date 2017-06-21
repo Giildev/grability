@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import { Row, Col, Image, Button, Modal } from 'react-bootstrap';
+import { Row, Col, Image, Button, Modal, Alert } from 'react-bootstrap';
 import { PubKey, TS, Hash, UrlCharacters } from '../config.js'
 import Cart from '../icons/shopping-cart-primary.png'
 import ShieldPrimary from '../icons/btn-favourites-primary.png'
-import ShieldDefault from '../icons/btn-favourites-default.png'
 import './styles.css'
 
 class Box extends React.Component {
@@ -17,7 +16,11 @@ class Box extends React.Component {
        comicName: "",
        comicImg: "",
        comicPrice: "",
-       comicDescription: ""
+       comicDescription: "",
+       alert: false,
+       favourite: false,
+       add: "Add to Favourite",
+       favouriteClass: "modal__favorite-Default"
     } ;
   }
 
@@ -29,18 +32,28 @@ class Box extends React.Component {
 
     axios.get(`${UrlCharacters}/${data}/comics?apikey=${PubKey}&ts=${TS}&hash=${Hash}`)
       .then((data)=>{
-        // console.log(data.data.data.results[0].description);
+        let results = data.data.data.results[0];
         this.setState({
-          comicName: data.data.data.results[0].title,
-          comicImg: data.data.data.results[0].images[0].path+"/standard_fantastic."+data.data.data.results[0].images[0].extension,
-          comicPrice: data.data.data.results[0].prices[0].price,
-          comicDescription: data.data.data.results[0].description
+          comicName: (results) ? results.title : "No Title Available",
+          comicImg: (results) ? results.images[0].path+"/standard_fantastic."+results.images[0].extension : "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/standard_fantastic.jpg",
+          comicPrice: (results) ? results.prices[0].price : "0.00",
+          comicDescription: (results) ? results.description : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio voluptatem repellendus, vero accusantium eum vel excepturi blanditiis accusamus eveniet labore rem magnam sed expedita minus enim omnis voluptates iste doloribus."
         })
       })
       .catch((data) =>{
-        console.log('not pass');
+        console.log('err', data);
       })
     this.setState({ showModal: true, id: data });
+  }
+
+  alert = () => {
+    (!this.state.alert) ? this.setState ({alert: true}) : this.setState ({alert: false})
+  }
+
+  addFavorite = () =>{
+    (!this.state.favourite)
+      ? this.setState ({favourite: true, add: "Add to Favourite", favouriteClass: "modal__favorite-Default"})
+      : this.setState ({favourite: false, add: "Added to Favourite", favouriteClass: "modal__favorite-Active"})
   }
 
 
@@ -112,26 +125,31 @@ class Box extends React.Component {
           </Modal.Body>
           <Modal.Footer>
             <Row>
-              <Col className="modal__favorite" xs={6} md={6}>
+              <Col onClick={e => this.addFavorite()} className={this.state.favouriteClass} xs={6} md={6}>
                 <Col style={{height: "100%"}} xs={4} md={4}>
                   <Image style={{paddingTop: "5px"}} src={ShieldPrimary} alt="" responsive/>
                 </Col>
                 <Col xs={8} md={8}>
-                  Added to favourites
+                  {this.state.add}
                 </Col>
               </Col>
-              <Col className="modal__close" xs={6} md={6}>
+              <Col onClick={e => this.alert()} className="modal__close" xs={6} md={6}>
                 <Col style={{height: "100%"}} xs={2} md={2}>
-                  <Image style={{paddingTop: "5px"}} src={Cart} alt="" responsive/>
+                  <Image src={Cart} alt=""/>
                 </Col>
                 <Col xs={8} md={8}>
                   Buy for ${this.state.comicPrice}
                 </Col>
               </Col>
             </Row>
+            {(this.state.alert)
+              ? <Alert bsStyle="warning">
+                  <strong>Oops!</strong> - Under Construction
+                </Alert>
+              : ""
+            }
           </Modal.Footer>
         </Modal>
-
         </Col>
 
     );

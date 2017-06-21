@@ -77,7 +77,7 @@ class Marvel extends Component {
 						</Col>
 					</Col>
 					<Col className="favorite" xs={2} md={2}>
-						<Favorite comicImg={this.state.comicImg} comicDescription={this.state.comicDescription}/>
+						<Favorite/>
 					</Col>
 					<Row>
 						<Col xs={12} md={12}>

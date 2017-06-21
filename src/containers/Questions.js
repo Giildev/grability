@@ -16,10 +16,10 @@ class Questions extends Component {
             Back
           </Link>
         </div>
-        <p className="App-intro">
+        <div className="App-intro">
           <div>
             <h3 className="questions">¿En qué consiste el principio de responsabilidad única ? ¿Cual es su propósito?</h3>
-            <p className="answerSRP">
+            <div className="answerSRP">
               El principio de responsabilidad única u SRP (siglas del inglés (Single Responsibility Principle) establece que cada módulo o clase debe tener responsabilidad sobre una sola parte de la funcionalidad proporcionada por el software y esta responsabilidad debe estar encapsulada en su totalidad por la clase. Todos sus servicios deben estar estrechamente alineados con esa responsabilidad.
               <br/><br/>En programación orientada a objetos, se suele definir como principio de diseño que cada clase debe tener una única responsabilidad, y que esta debe estar contenida únicamente en la clase. Así:
               <ul>
@@ -29,7 +29,7 @@ class Questions extends Component {
                 <li>Si una clase asume más de una responsabilidad, será más sensible al cambio.</li>
                 <li>Si una clase asume más de una responsabilidad, las responsabilidades se acoplan.</li>
               </ul>
-            </p>
+            </div>
 
             <h3 className="questions">¿Que características tiene según su opinión “buen” código o código limpio?</h3>
             <ul className="answers">
@@ -41,7 +41,7 @@ class Questions extends Component {
               <li>ETC...</li>
             </ul>
           </div>
-        </p>
+        </div>
       </div>
     );
   }
